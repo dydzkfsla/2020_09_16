@@ -1,5 +1,7 @@
 ﻿using System;
+using ClassLibrary1;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +26,11 @@ namespace _2020_09_16
         }
 
 
+        public static Person CreatePerson()
+        {
+            return new Person();
+        }
+
     }
 
 
@@ -35,6 +42,7 @@ namespace _2020_09_16
 
             for(int i =0; i < person.Length; i++)
             {
+                person[i] = new Person();
                 Console.Write("이름을 입력하세요: ");
                 person[i].Name = Console.ReadLine();
                 Console.Write("나이를 입력하세요: ");
@@ -51,5 +59,6 @@ namespace _2020_09_16
             }
 
         }
+
     }
 }

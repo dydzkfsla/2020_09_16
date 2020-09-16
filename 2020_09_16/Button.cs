@@ -7,10 +7,14 @@ using System.Threading.Tasks;
 namespace _2020_09_16
 {
     class Button
-    {
+    {        
         static int bttonCnt = 0;
         static Button btn;
         int click = 0;
+        static Button()
+        {
+            bttonCnt = 10;
+        }
         private Button()
         {
             bttonCnt++;
@@ -34,8 +38,14 @@ namespace _2020_09_16
     }
 
     class ClickCount{
-        static void Main()
+        static void Main(string[] args)
         {
+            if (args.Length == 2)
+            {
+                Console.WriteLine(args[0]+ "/" + args[1]);
+            }
+            
+
             Button btn1 = Button.CreateInstance();
             btn1.Click();
             btn1.Click();
